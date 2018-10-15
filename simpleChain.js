@@ -1,7 +1,18 @@
 const SHA256 = require('crypto-js/sha256')
-const Block = require('./block')
+
 
 const db = require('level')('./chaindata')
+
+class Block {
+  constructor (data) {
+    this.hash = '',
+    this.height = 0,
+    this.body = data,
+    this.time = 0,
+    this.previousBlockHash = ''
+  }
+}
+
 
 class Blockchain {
   constructor() {
